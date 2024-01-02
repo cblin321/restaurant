@@ -1,0 +1,266 @@
+html {
+    background-image: url(./media/ramen-noodles-refined-2048x1367.jpg);
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    /* overflow: hidden; */
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: calc(30% / 3);
+    /* border-bottom: 1px solid black; */
+    /* padding: 10px;   */
+    height: 100%;
+    /* padding-top: calc(min(30px, 10%) / 2); */
+    font-weight: 800;
+    font-size: 1.25rem;
+    background: linear-gradient(to left, #f46b45, #eea849);
+}
+
+.reset {
+    margin: 0;
+    padding: 0;
+}
+
+.info-item {
+    width: min(12vw, 350px);
+}
+
+#loc-icon {
+    transform: translate(-4px, 0);
+    z-index: -1;
+}
+
+.menu-item {
+    text-align: left !important;
+}
+
+.about-container {
+    background-color: rgba(0, 0, 0, .35);
+    height: min(60vh, 400px);
+    width: min(60vw, 500px);
+    gap: .5rem; 
+    text-align: left !important;
+    font-size: 1.2rem;  
+}
+
+.item-header {
+    justify-content: space-between !important;
+}
+
+.about-content {
+    height: min(100px, 60%);
+    /* width: min(225px, 30vw); */
+    width: min(12vw, 350px);
+}
+
+.about-content p {
+    display: inline-block;
+}
+
+.headline {
+    font-size: 4.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+#top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 12%;
+}
+
+svg {
+    margin-right: min(.75rem, 3%);
+}
+
+.center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.desc {
+    text-align: center;
+}
+
+.action-btn {
+    border: none;
+    border-radius: 6px;
+    height: 5vh;
+    width: max(10%, 50px);
+    margin: 0;
+    padding: 0; 
+    background-color: #fcb10f;
+    color: white;
+    cursor: pointer;
+    font-weight: 650;
+    font-size: 1.15rem;
+}
+
+.subtext {
+    font-size: .9rem;
+}
+
+.item-container {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    background: rgba(0, 0, 0, .35);
+    padding: 3rem;
+    width: min(1400px, 70%);
+    gap: 20px; 
+}
+
+.menu-item h2 {
+    font-size: 1.1rem; 
+}
+
+.site-logo {
+    margin: 0;
+    padding: 0;
+    transform: translate(-30%, 0);
+    object-fit: contain;
+    width: 60px;
+    height: 60px;
+}
+
+a {
+    cursor: pointer;
+}
+
+.def-img {
+    object-fit: contain;
+    width: min(700px, 60%);
+    height: min(75px, calc(.375 * 30%));
+}
+
+.bar {
+    width: 40px;
+    height: 5px;
+    border-radius: 6px;
+    background-color: white;
+    display: inline;
+    margin: 6px 0;
+    transition: 0.3s ease-in-out;
+    opacity: 1;
+}
+
+#content {
+    margin-top: 12%;
+}
+
+.nav-menu {
+    position: fixed;
+    top: 12%;     
+    width: 100%;
+    transition: .3s ease-in-out; 
+    height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: linear-gradient(to left, #f46b45, #eea849);
+    z-index: 1;
+}
+
+.nav-item {
+    height: 0;
+    opacity: 0;
+    list-style: none;
+    text-align: center;
+    /* border-bottom: ; */
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    /* display: none; */
+    /*DONT DO THE BELOW IT CAUSES THE NAV ITEMS TO NOT TRANSITION BACK (due to opacity changes)
+    transition: height .3s ease-in-out; 
+    INSTEAD USE 
+    transition: .3s ease-in-out;
+    */
+}
+
+@media(max-width: 768px) {
+    .active.bar:nth-of-type(1) {
+        margin: none;
+        transform: rotate(45deg) translate(0, calc(6px + 9.5px));
+        /* transform: translate(0, calc(6px + 8px)); */
+    }
+    .active.bar:nth-of-type(3) {
+        margin: none;
+        transform: rotate(-45deg) translate(0, calc(-6px - 9.5px));
+        /* transform: translate(0, calc(-6px - 8px)); */
+    }
+    .active.bar:nth-of-type(2) {
+        opacity: 0;
+    }
+
+    #content {
+        margin-top: calc(150px + 18%);
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    nav a, nav button {
+        display: none;
+    } 
+
+    .nav-item.active {
+        opacity: 1;
+        height: 25px;
+    }
+
+    nav {
+        justify-content: space-between;
+        margin: 0;
+    }
+
+    nav > :nth-child(1) {
+        margin-left: 6%;
+    }
+
+    nav > :nth-last-child(2) {
+        margin-right: 5%;
+    }
+
+    .bar {
+        display: block;
+    }
+
+    svg {
+        display: none;
+    }
+
+    .about-container {
+        gap: min(100px, 30%);
+    }
+
+    .about-content {
+        width: calc(min(60vw, 500px) / 2);
+    }
+
+    .nav-menu.active {
+        height: 150px;
+        opacity: 1;
+    }
+}
+
